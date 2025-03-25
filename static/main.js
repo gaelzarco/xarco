@@ -2,7 +2,6 @@
  * /static/main.js
 */
 
-window.onload = function() {
-  console.log("Welcome to my portfolio!");
-};
-
+document.addEventListener('DOMContentLoaded', () => {
+    document.querySelector('body').style.opacity = 1
+})

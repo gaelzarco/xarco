@@ -26,6 +26,8 @@ body {
   font-family: "SF Pro", "Inter", -apple-system, Geist, sans-serif;
   background-color: var(--background-black);
   margin: 0;
+  opacity: 0;
+  transition: opacity 0.35s;
 }
 
 main {
