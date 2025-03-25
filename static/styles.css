@@ -2,6 +2,7 @@
  * /static/styles.css
 */
 
+/* Universal Styles */
 body {
 
   font-family: Arial, sans-serif;
@@ -25,4 +26,15 @@ a {
 
 a:hover {
   text-decoration: underline !important;
+}
+
+/* Class Styles */
+.profile_wrapper {
+  display: flex;
+  align-items: center;
+  min-height: 200px;
+}
+
+.profile_left img {
+  max-height: 120px;
 }
