@@ -18,12 +18,13 @@
   --body-gray-secondary: #7F7F7F;
 
   /* Line-height */
-  --lh: 1.35;
+  --header-lh: 1.35;
+  --body-lh: 1.75;
 }
 
 /* Tag Styles */
 body {
-  font-family: "SF Pro", "Inter", -apple-system, Geist, sans-serif;
+  font-family: "SF Pro", -apple-system, Geist, sans-serif;
   background-color: var(--background-black);
   margin: 0;
   opacity: 0;
@@ -47,14 +48,14 @@ h1 {
 }
 
 h2 {
-  font-size: 0.95em;
+  font-size: 0.875em;
   font-weight: 300;
 }
 
 p,
 li,
 a {
-  font-size: 0.85em;
+  font-size: 0.875em;
   font-weight: 300;
   margin: 0;
 }
@@ -62,17 +63,16 @@ a {
 h1,
 h2,
 p,
-li,
 a {
   line-height: var(--lh);
 }
 
-p,
-li {
+p {
   color: var(--body-gray);
 }
 
-a {
+a,
+li {
   color: var(--body-gray-secondary);
   text-decoration: none;
 }
@@ -80,27 +80,89 @@ a {
 a:hover {
   text-decoration: underline !important;
 }
- ul {
-   margin: 0;
- }
+
+ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  list-style-type: none;
+}
 
 /* Class Styles */
 .content {
   max-width: 500px;
   width: 100%;
-  padding: 3.6em 1em;
+  padding: 7em 1em;
+}
+
+.arrow {
+  filter: invert(1);
+  height: 15px;
 }
 
 .profile_wrapper {
   display: flex;
+  justify-content: left;
   align-items: center;
-  min-height: 200px;
-}
-
-.profile_left {
-  padding: 0px 15px;
+  gap: 25px;
+  margin-bottom: 30px;
 }
 
 .profile_left img {
-  max-height: 100px;
+  height: 95px;
+  width: 85px;
+  object-fit: cover;
 }
+
+.about_wrapper,
+.generic_wrapper {
+  margin-bottom: 35px;
+}
+
+.generic_wrapper {
+  padding: 0 5px;
+}
+
+.generic_wrapper h2 {
+  margin-bottom: 20px;
+}
+
+.generic_wrapper p {
+  line-height: var(--body-lh);
+}
+
+.xp_item_wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+.xp_item {
+  display: flex;
+  gap: 20px;
+}
+
+.xp_left {
+  min-width: 85px;
+}
+
+.xp_left p {
+  line-height: initial;
+  color: var(--body-gray-secondary);
+}
+
+.xp_right {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.xp_right h2 {
+  line-height: initial;
+  margin-bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+

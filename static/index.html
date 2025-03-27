@@ -16,6 +16,17 @@
   <!-- Favicon -->
   <link rel="icon" href="/static/assets/favicon_white.ico" type="image/x-icon"
   sizes="32x32">
+  <!-- Three.js -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+      }
+    }
+  </script>
+  <!-- JavaScript -->
+  <script src="/static/main.js" type="module"></script>
 </head>
 
 <body>
@@ -34,26 +45,116 @@
 
   <main>
     <section class="content">
+
       <section class="profile_wrapper">
         <div class="profile_left">
           <img src="/static/assets/dot-circle-white.webp"
-          alt="Dot Matrix Circle" loading="lazy" height="100" width="100"/>
+          alt="Dot Matrix Circle" loading="lazy" height="95" width="150"/>
         </div>
         <div class="profile_right">
           <h1>Gael Zarco</h1>
-          <p>Software Engineer &#8226; Computer Science Student</p>
+          <p>Software Engineer - Computer Science Student</p>
           <a href="/static/GAEL_ZARCO.pdf" target="_blank">Resume</a>
         </div>
       </section>
 
-      <section>
-        <h2>Work</h2>
-        <ul>
-          <li>Web Devloper</li>
-          <li>IT Technician</li>
-          <li>Software Engineer Intern</li>
-        </ul>
+      <section class="generic_wrapper about_wrapper">
+        <h2>About</h2>
+        <p>
+          I enjoy programming 3D graphics-related software such as rasterizers. 
+          Experienced in full-stack web development and IT support. Seeking
+          part-time and internship opportunities while pursuing a bachelor's in
+          computer science.
+        </p>
       </section>
+
+      <section class="generic_wrapper">
+        <h2>Work Experience</h2>
+
+        <section class="xp_item_wrapper">
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>2024 - 2024</p>
+            </div>
+            <div class="xp_right">
+              <h2>
+                Web Developer - 702 Pros
+                <img class="arrow" src="/static/icons/arrow-top-right.svg"
+                alt="Arrow"/>
+              </h2>
+              <p>
+                Created full-stack web applications in a cross-functional team
+                of designers and developers. Focused on reducing external
+                dependency usage and developing apps from the ground-up. Met
+                strict deadlines and project milestones in a client-centric
+                environment.
+              </p>
+              <ul class="xp_tech">
+                <li>PHP</li>
+                <li>• DNS</li>
+                <li>• Apache</li>
+                <li>• MySQL</li>
+                <li>• WordPress</li>
+                <li>• Debugging</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>2023 - 2024</p>
+            </div>
+            <div class="xp_right">
+              <h2>
+                IT Technician - Team Tech Solutions
+                <img class="arrow" src="/static/icons/arrow-top-right.svg"
+                alt="Arrow"/>
+              </h2>
+              <p>
+                Worked in a tight-knit team to provide industry leading IT
+                support to large healthcare clinics and consumer markets across
+                the United States. Collaborated with CEO to track ongoing
+                projects and objectives to improve client feedback and
+                support efficiency.
+              </p>
+              <ul class="xp_tech">
+                <li>Azure</li>
+                <li>• SSH</li>
+                <li>• SFTP</li>
+                <li>• Meraki</li>
+                <li>• Networking</li>
+                <li>• Troubleshooting</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>2023 - 2023</p>
+            </div>
+            <div class="xp_right">
+              <h2>
+                Software Engineer Intern - Productos-AI
+                <img class="arrow" src="/static/icons/arrow-top-right.svg"
+                alt="Arrow"/>
+              </h2>
+              <p>
+                Contributed to the development of front-end functionality,
+                efficiency, and security. Improved internal API response-times
+                and participated in an Agile team environment.
+              </p>
+              <ul class="xp_tech">
+                <li>React</li>
+                <li>• AWS</li>
+                <li>• Javascipt</li>
+                <li>• HTML</li>
+                <li>• CSS</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+
     </section>
   </main>
 
@@ -61,9 +162,6 @@
   <footer>
   </footer>
   -->
-
-  <!-- JavaScript -->
-  <script src="/static/main.js" type="application/javascript"></script>
 </body>
 
 </html>
