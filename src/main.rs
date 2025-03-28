@@ -1,28 +1,21 @@
 /*
  * /src/main.rs
 */
+pub mod models;
+pub mod helpers;
 
 use sqlx::sqlite::SqlitePoolOptions;
 use warp::{reply::json, Filter};
 
-#[derive(Debug, serde::Deserialize, serde::Serialize, sqlx::FromRow)]
-struct Email {
-    id: u32,
-    first_name: String,
-    last_name: String,
-    email: String,
-    body: String,
-}
+use models::Email;
+use helpers::json_body;
 
-fn json_body() -> impl Filter<
-Extract = (Email,), Error = warp::Rejection
-> + Clone {
-    // When accepting a body, we want a JSON body
-    // (and to reject huge payloads)...
-    warp::body::content_length_limit(1024 * 16).and(warp::body::json())
-}
+/*********** CONSTANTS ********************************************************/
+const HOST: [u8; 4] = [127, 0, 0, 1];
+const PORT: u16 = 5000;
 
-async fn handle_email(
+
+async fn post_email(
     msg: Email,
     pool: sqlx::SqlitePool,
 ) -> Result<impl warp::Reply, warp::Rejection> {
@@ -59,7 +52,7 @@ async fn main() -> Result<(), sqlx::Error> {
         .fetch_all(&pool)
         .await
     {
-        Ok(_) => println!("[STATUS]: Server Started!"),
+        Ok(_) => println!("[LOG]: Listening on {}", &PORT),
         Err(e) => {
             eprintln!("[FATAL ERROR]: {}", e);
             return Err(e);
@@ -77,11 +70,11 @@ async fn main() -> Result<(), sqlx::Error> {
         .and(warp::path("email"))
         .and(json_body())
         .and(warp::any().map(move || pool.clone()))
-        .and_then(handle_email);
+        .and_then(post_email);
 
     let routes = home.or(email).or(static_files);
 
-    warp::serve(routes).run(([127, 0, 0, 1], 5000)).await;
+    warp::serve(routes).run((HOST, PORT)).await;
 
     Ok(())
 }
