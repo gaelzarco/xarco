@@ -28,7 +28,12 @@ pub fn routes(pool: sqlx::SqlitePool) ->
 impl Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone {
     // Index
     let idx = warp::path::end()
-        .and(warp::fs::file("./src/views/idx/index.html"));
+        .and(warp::fs::file("./src/views/index.html"));
+
+    // Static 
+    let proj_rgx = warp::path("projects")
+        .and(warp::path("rgx"))
+        .and(warp::fs::file("./src/views/rgx.html"));
 
     // Static 
     let static_files = warp::path("static").and(warp::fs::dir("./static"));
@@ -42,10 +47,10 @@ impl Filter<Extract = impl warp::Reply, Error = warp::Rejection> + Clone {
         .and_then(post_email);
 
     // Routes
-    idx.or(email).or(static_files)
+    idx.or(proj_rgx).or(email).or(static_files)
 }
 
-/******** ROUTE HANDLERS ******************************************************/
+/******** Services ************************************************************/
 /// Email Post Service
 ///
 /// Takes in a user-submitted email and a database pool and submits the email

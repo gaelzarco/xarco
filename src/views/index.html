@@ -1,5 +1,5 @@
 <!--
-  -- /static/index.html
+  -- /src/views/index.html
  -->
 
 <!DOCTYPE html>
@@ -11,6 +11,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Zarco - Software Engineer</title>
 
+  <!-- Preload -->
+  <link rel="preload" href="/static/styles.css" as="style"/>
+  <link rel="preload" href="/static/main.js" as="script" type="module"/>
   <!-- CSS -->
   <link rel="stylesheet" href="/static/styles.css">
   <!-- Favicon -->
@@ -26,25 +29,12 @@
     }
   </script>
   <!-- JavaScript -->
-  <script src="/static/main.js" type="module"></script>
+  <script defer src="/static/main.js" type="module"></script>
 </head>
 
 <body>
-  <!-- Main -->
-  <!--
-  <header>
-      <nav>
-          <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Contact</a></li>
-          </ul>
-      </nav>
-  </header>
-  -->
-
   <main>
-    <section class="content">
+    <section class="content fade_in">
 
       <section class="profile_wrapper">
         <div class="profile_left">
@@ -61,7 +51,8 @@
       <section class="about_wrapper">
         <h2>About</h2>
         <p>
-          I enjoy programming minimalistic and performant software. Experienced 
+          I enjoy programming software and applications that improve my
+          understanding of the most relevant technology in my life. Experienced 
           in web development and IT support. Seeking part-time and internship
           opportunities while pursuing a bachelor's in computer science.
         </p>
@@ -71,6 +62,7 @@
         <h2>Work Experience</h2>
 
         <section class="xp_item_wrapper">
+
           <div class="xp_item">
             <div class="xp_left">
               <p>2024 - 2024</p>
@@ -149,19 +141,22 @@
               </ul>
             </div>
           </div>
+
         </section>
+
       </section>
 
       <section class="generic_wrapper">
         <h2>Side Projects</h2>
 
         <section class="xp_item_wrapper">
+
           <div class="xp_item">
             <div class="xp_left">
               <p>Ongoing</p>
             </div>
             <div class="xp_right">
-              <a href="https://github.com/gaelzarco/rgx" target="_blank">
+              <a href="/projects/rgx">
                 RGX 
                 <img class="arrow" src="/static/icons/arrow-top-right.svg"
                 alt="Arrow"/>
@@ -226,6 +221,55 @@
           </div>
 
         </section>
+
+      </section>
+
+      <section class="generic_wrapper">
+        <h2>Links</h2>
+
+        <section class="xp_item_wrapper">
+
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>LinkedIn</p>
+            </div>
+            <div class="xp_right">
+              <a href="https://linkedin.com/in/gaelzarco" target="_blank">
+                @gaelzarco 
+                <img class="arrow" src="/static/icons/arrow-top-right.svg"
+                alt="Arrow"/>
+              </a>
+            </div>
+          </div>
+
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>Github</p>
+            </div>
+            <div class="xp_right">
+              <a href="https://github.com/gaelzarco" target="_blank">
+                @gaelzarco 
+                <img class="arrow" src="/static/icons/arrow-top-right.svg"
+                alt="Arrow"/>
+              </a>
+            </div>
+          </div>
+
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>Dot Files</p>
+            </div>
+            <div class="xp_right">
+              <a href="https://github.com/gaelzarco/dot" target="_blank">
+                @gaelzarco/dot
+                <img class="arrow" src="/static/icons/arrow-top-right.svg"
+                alt="Arrow"/>
+              </a>
+            </div>
+          </div>
+
+        </section>
+
       </section>
 
     </section>

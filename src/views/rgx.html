@@ -1,0 +1,150 @@
+<!--
+  -- /src/views/rgx.html
+ -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Zarco - RGX</title>
+
+  <!-- Preload -->
+  <link rel="preload" href="/static/styles.css" as="style"/>
+  <link rel="preload" href="/static/main.js" as="script" type="module"/>
+  <!-- CSS -->
+  <link rel="stylesheet" href="/static/styles.css">
+  <!-- Favicon -->
+  <link rel="icon" href="/static/assets/favicon_white.ico" type="image/x-icon"
+  sizes="32x32">
+  <!-- Three.js Library -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.174.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.174.0/examples/jsm/"
+      }
+    }
+  </script>
+  <!-- JavaScript -->
+  <script defer src="/static/main.js" type="module"></script>
+</head>
+
+<body>
+  <main>
+    <section class="content fade_in">
+
+      <nav class="bc_wrapper">
+        <a class="bc_item" href="/">
+          <img class="bc_arrow" src="/static/icons/arrow-left.svg"
+          alt="arrow"/>
+           Home
+        </a>
+      </nav>
+
+      <section class="profile_wrapper">
+        <div class="profile_right">
+          <h1>RGX</h1>
+          <p>Software Rasterizer</p>
+        </div>
+      </section>
+
+      <section class="about_wrapper">
+        <h2>Abstract</h2>
+        <p>
+        CPU-based rendering system that converts vector graphics (like
+         triangles) into pixel data without relying on a GPU. Handles
+         transformations, shading, and rasterization.
+        </p>
+      </section>
+
+      <section class="generic_wrapper">
+        <h2>Methods</h2>
+
+        <section class="xp_item_wrapper">
+
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>Goal</p>
+            </div>
+            <div class="xp_right">
+              <ul>
+                <li class="focus">
+                  Build a simple 3D-rendering pipeline to understand basic
+                  rasterization. Focus on limiting external dependencies.
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>Tools</p>
+            </div>
+            <div class="xp_right">
+              <ul>
+                <li class="focus">Rust</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="xp_item">
+            <div class="xp_left">
+              <p>Skills</p>
+            </div>
+            <div class="xp_right">
+              <ul class="focus">
+                <li class="focus">
+                  Linear Algebra (vector/matrix operations)
+                </li>
+                <li class="focus">File Parsing (.obj files)</li>
+                <li class="focus">
+                  3D-Rendering (vertex transformation)
+                </li>
+                <li class="focus">
+                  Rasterization (triangle filling, depth buffering)
+                </li>
+                <li class="focus">
+                  Backface Culling (hidden surface removal)
+                </li>
+                <li class="focus">
+                  Z-Buffering (depth management)
+                </li>
+                <li class="focus">
+                  Normalization (vector normalization, coordinate mapping)
+                </li>
+                <li class="focus">
+                  Interpolation (vertex attributes, shading)
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </section>
+      </section>
+
+
+      <section class="generic_wrapper">
+        <h2>Screenshots</h2>
+        <img class="res_img" src="/static/assets/rgx-1.png"
+          alt="RGX African Head Render Example" loading="lazy"/>
+      </section>
+
+      <section class="about_wrapper">
+        <h2>Results</h2>
+        <p>
+          Successfully achieved the primary goal of building a minimal 3D
+          rendering pipeline with limited external dependencies. Through
+          implementation of each component, I developed a comprehensive
+          understanding of how a modern graphics pipeline converts data into
+          performant renderings.
+        </p>
+      </section>
+
+    </section>
+  </main>
+
+</body>
+</html>

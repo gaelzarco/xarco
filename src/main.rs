@@ -3,13 +3,9 @@
 */
 
 // Module definition(s)
-pub mod models;
-pub mod controllers;
-pub mod helpers;
-
 use sqlx::sqlite::SqlitePoolOptions;
-use controllers::routes;
-use models::Email;
+use xar2::controllers::routes;
+use xar2::models::Email;
 
 /********* CONSTANTS **********************************************************/
 const HOST: [u8; 4] = [127, 0, 0, 1];
